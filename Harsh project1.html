@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Harsh Raj — Full Stack Web Developer</title>
+<meta name="description" content="Harsh Raj — BCA student, full stack web developer and UI/UX enthusiast building fast, clean, user-friendly digital experiences." />
+<meta name="theme-color" content="#020617" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Harsh Raj — Full Stack Web Developer" />
+<meta property="og:description" content="Building modern, fast, and user-friendly digital experiences with clean code and beautiful design." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="portfolio1.css" />
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-mark">
+    <span>H</span><span>R</span>
+  </div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- Custom Cursor -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- Navbar -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">HR<span class="dot">.</span></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#testimonials" class="nav-link">Testimonials</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+      </button>
+      <a href="#contact" class="btn btn-small btn-primary nav-cta">Hire Me</a>
+      <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <canvas id="particles"></canvas>
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+    </div>
+
+    <div class="section-inner hero-inner">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Hi, I'm Harsh Raj</p>
+        <h1 class="hero-title">
+          I build full-stack products with
+          <span class="type-wrap"><span class="type-target" id="typeTarget"></span><span class="type-cursor">|</span></span>
+        </h1>
+        <p class="hero-tagline">Building modern, fast, and user-friendly digital experiences with clean code and beautiful design.</p>
+
+        <div class="hero-cta-row">
+          <a href="#contact" class="btn btn-primary btn-ripple">Hire Me</a>
+          <a href="#projects" class="btn btn-outline btn-ripple">View Projects</a>
+          <a href="assets/resume/Harsh_Raj_Resume.pdf" download class="btn btn-ghost btn-ripple">
+            Download Resume
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1-.02-1.96-3.2.7-3.87-1.54-3.87-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.2.66.79.55A10.51 10.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+          </a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+          </a>
+          <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter / X" class="social-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.9 2H22l-7.5 8.57L23.3 22h-6.9l-5.4-6.6L4.8 22H1.7l8.03-9.17L1 2h7.1l4.9 6.03L18.9 2Zm-1.2 18h1.9L7.4 4h-2l12.3 16Z"/></svg>
+          </a>
+          <a href="mailto:harsh.raj@example.com" aria-label="Email" class="social-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" id="heroVisual">
+        <!-- Signature element: layered full-stack panels -->
+        <div class="stack-frame" id="stackFrame">
+          <div class="stack-layer layer-tools" style="--depth:1">
+            <span class="layer-label">Tools</span>
+            <span class="layer-tags">Git · GitHub · Figma · VS Code</span>
+          </div>
+          <div class="stack-layer layer-db" style="--depth:2">
+            <span class="layer-label">Database</span>
+            <span class="layer-tags">MySQL</span>
+          </div>
+          <div class="stack-layer layer-backend" style="--depth:3">
+            <span class="layer-label">Backend</span>
+            <span class="layer-tags">Node.js · Express.js</span>
+          </div>
+          <div class="stack-layer layer-frontend" style="--depth:4">
+            <span class="layer-label">Frontend</span>
+            <span class="layer-tags">HTML5 · CSS3 · JavaScript</span>
+          </div>
+          <div class="stack-glow"></div>
+        </div>
+        <div class="orbit-badge ob-1">6+ Projects</div>
+        <div class="orbit-badge ob-2">BCA Student</div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-hint" aria-label="Scroll down">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">About Me</p>
+      <h2 class="section-title reveal">The developer behind the code</h2>
+
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p>I'm a passionate BCA student who enjoys designing and developing modern websites and web applications. I love solving real-world problems through technology and continuously learning new tools and frameworks.</p>
+          <p>My goal is to become an excellent software engineer while creating products that provide outstanding user experiences — the kind that feel obvious in hindsight, but take real craft to get right.</p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-number" data-count="6">0</span>
+              <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="10">0</span>
+              <span class="stat-label">Technologies</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="3">0</span>
+              <span class="stat-label">Certificates</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-timeline reveal">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-year">The spark</p>
+            <p class="timeline-text">Discovered web development and got hooked on turning ideas into interactive interfaces.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-year">The foundation</p>
+            <p class="timeline-text">Started my BCA degree, diving into programming fundamentals, data structures, and databases.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-year">The craft</p>
+            <p class="timeline-text">Picked up the full stack — HTML, CSS, JavaScript, Node.js, Express, and MySQL — building real projects along the way.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-year">Today</p>
+            <p class="timeline-text">Looking for internships and freelance opportunities to apply what I've learned to real products and real users.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills" id="skills">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Skills</p>
+      <h2 class="section-title reveal">Tools I reach for</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <h3 class="skill-cat">Frontend</h3>
+          <ul class="skill-list">
+            <li><span>HTML5</span><div class="bar"><div class="bar-fill" data-fill="95"></div></div></li>
+            <li><span>CSS3</span><div class="bar"><div class="bar-fill" data-fill="90"></div></div></li>
+            <li><span>JavaScript</span><div class="bar"><div class="bar-fill" data-fill="85"></div></div></li>
+            <li><span>Responsive Design</span><div class="bar"><div class="bar-fill" data-fill="88"></div></div></li>
+          </ul>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3 class="skill-cat">Backend</h3>
+          <ul class="skill-list">
+            <li><span>Node.js</span><div class="bar"><div class="bar-fill" data-fill="75"></div></div></li>
+            <li><span>Express.js</span><div class="bar"><div class="bar-fill" data-fill="72"></div></div></li>
+          </ul>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3 class="skill-cat">Programming</h3>
+          <ul class="skill-list">
+            <li><span>C</span><div class="bar"><div class="bar-fill" data-fill="80"></div></div></li>
+            <li><span>Java</span><div class="bar"><div class="bar-fill" data-fill="65"></div></div></li>
+            <li><span>Python</span><div class="bar"><div class="bar-fill" data-fill="45"></div></div></li>
+          </ul>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3 class="skill-cat">Database</h3>
+          <ul class="skill-list">
+            <li><span>MySQL</span><div class="bar"><div class="bar-fill" data-fill="80"></div></div></li>
+          </ul>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3 class="skill-cat">Tools</h3>
+          <ul class="skill-list">
+            <li><span>Git</span><div class="bar"><div class="bar-fill" data-fill="85"></div></div></li>
+            <li><span>GitHub</span><div class="bar"><div class="bar-fill" data-fill="85"></div></div></li>
+            <li><span>VS Code</span><div class="bar"><div class="bar-fill" data-fill="92"></div></div></li>
+            <li><span>Figma</span><div class="bar"><div class="bar-fill" data-fill="70"></div></div></li>
+          </ul>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3 class="skill-cat">Soft Skills</h3>
+          <ul class="skill-list skill-list-tags">
+            <li class="tag">Problem Solving</li>
+            <li class="tag">Teamwork</li>
+            <li class="tag">Communication</li>
+            <li class="tag">Leadership</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Services</p>
+      <h2 class="section-title reveal">What I can build for you</h2>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3m8 0h3a2 2 0 0 0 2-2v-3"/></svg>
+          </div>
+          <h3>Website Development</h3>
+          <p>End-to-end websites built with clean, maintainable code — from idea to deployment.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+          </div>
+          <h3>Responsive Design</h3>
+          <p>Interfaces that adapt beautifully across mobile, tablet, and desktop screens.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 3 14h7l-1 8 11-14h-7l1-6Z"/></svg>
+          </div>
+          <h3>Landing Pages</h3>
+          <p>High-converting, fast-loading landing pages designed to turn visitors into leads.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+          </div>
+          <h3>UI Design</h3>
+          <p>Thoughtful, minimal interfaces crafted with intention — every pixel earns its place.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 2 7l10 5 10-5-10-5ZM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Portfolio Websites</h3>
+          <p>Personal brand sites that help creators and professionals stand out and get noticed.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 10V3L4 14h7v7l9-11h-7Z"/></svg>
+          </div>
+          <h3>Website Optimization</h3>
+          <p>Performance audits and fixes to make existing sites faster and more accessible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Featured Projects</p>
+      <h2 class="section-title reveal">Things I've built</h2>
+
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Project cards injected by script.js / static fallback below -->
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="education" id="education">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Education</p>
+      <h2 class="section-title reveal">My academic path</h2>
+
+      <div class="edu-timeline">
+        <div class="edu-item reveal">
+          <div class="edu-dot"></div>
+          <div class="edu-content">
+            <p class="edu-tag">Undergraduate</p>
+            <h3>Bachelor of Computer Applications (BCA)</h3>
+            <p class="edu-desc">Studying programming fundamentals, data structures, databases, and software engineering principles.</p>
+          </div>
+        </div>
+        <div class="edu-item reveal">
+          <div class="edu-dot"></div>
+          <div class="edu-content">
+            <p class="edu-tag">Schooling</p>
+            <h3>Higher Secondary Education</h3>
+            <p class="edu-desc">Completed schooling with a focus on mathematics and computer science.</p>
+          </div>
+        </div>
+        <div class="edu-item reveal">
+          <div class="edu-dot"></div>
+          <div class="edu-content">
+            <p class="edu-tag">Certifications</p>
+            <h3>Web Development &amp; Programming Certificates</h3>
+            <p class="edu-desc">Completed certified courses in full-stack web development and core programming languages.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="achievements" id="achievements">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Achievements</p>
+      <h2 class="section-title reveal">Milestones so far</h2>
+
+      <div class="achievements-grid">
+        <div class="achieve-card reveal">
+          <span class="achieve-number" data-count="6">0</span>
+          <span class="achieve-label">Projects Completed</span>
+        </div>
+        <div class="achieve-card reveal">
+          <span class="achieve-number" data-count="10">0</span>
+          <span class="achieve-label">Technologies Learned</span>
+        </div>
+        <div class="achieve-card reveal">
+          <span class="achieve-number" data-count="3">0</span>
+          <span class="achieve-label">Certificates Earned</span>
+        </div>
+        <div class="achieve-card reveal">
+          <span class="achieve-number" data-count="150">0</span>
+          <span class="achieve-label">Hours of Coding Practice</span>
+        </div>
+        <div class="achieve-card reveal">
+          <span class="achieve-number" data-count="5">0</span>
+          <span class="achieve-label">Happy Clients</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Testimonials</p>
+      <h2 class="section-title reveal">What people say</h2>
+
+      <div class="testimonial-track-wrap reveal">
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-card">
+            <p class="t-quote">Harsh delivered our landing page ahead of schedule and it looked far more polished than what we asked for. Clear communication throughout.</p>
+            <div class="t-author">
+              <div class="t-avatar">RP</div>
+              <div>
+                <p class="t-name">Riya Patel</p>
+                <p class="t-role">Startup Founder</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p class="t-quote">One of the strongest interns we've worked with. Picked up our codebase quickly and shipped clean, well-tested features.</p>
+            <div class="t-author">
+              <div class="t-avatar">AS</div>
+              <div>
+                <p class="t-name">Aman Sharma</p>
+                <p class="t-role">Engineering Manager</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p class="t-quote">Great eye for design and attention to detail. Our portfolio site finally feels like it represents the brand properly.</p>
+            <div class="t-author">
+              <div class="t-avatar">NK</div>
+              <div>
+                <p class="t-name">Neha Kapoor</p>
+                <p class="t-role">Small Business Owner</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section class="resume" id="resume">
+    <div class="section-inner resume-inner reveal">
+      <div class="resume-copy">
+        <p class="section-eyebrow">Resume</p>
+        <h2 class="section-title">Want the full picture?</h2>
+        <p class="resume-text">Download my resume for a complete overview of my education, skills, and project experience.</p>
+      </div>
+      <a href="assets/resume/Harsh_Raj_Resume.pdf" download class="btn btn-primary btn-ripple btn-large">
+        Download Resume
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Contact</p>
+      <h2 class="section-title reveal">Let's build something together</h2>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-info-item">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+            <div>
+              <p class="ci-label">Email</p>
+              <p class="ci-value">rajharsh9501@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            <div>
+              <p class="ci-label">Phone</p>
+              <p class="ci-value">+91 9065262200</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="ci-label">Location</p>
+              <p class="ci-value">Noida, Uttar Pradesh, India</p>
+            </div>
+          </div>
+          <div class="map-placeholder" aria-label="Map placeholder">
+            <span>Map preview</span>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="fname">Name</label>
+              <input type="text" id="fname" name="name" placeholder="Your name" required />
+              <span class="form-error" data-error-for="fname"></span>
+            </div>
+            <div class="form-field">
+              <label for="femail">Email</label>
+              <input type="email" id="femail" name="email" placeholder="you@example.com" required />
+              <span class="form-error" data-error-for="femail"></span>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="fsubject">Subject</label>
+            <input type="text" id="fsubject" name="subject" placeholder="What's this about?" required />
+            <span class="form-error" data-error-for="fsubject"></span>
+          </div>
+          <div class="form-field">
+            <label for="fmessage">Message</label>
+            <textarea id="fmessage" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            <span class="form-error" data-error-for="fmessage"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-ripple btn-full">Send Message</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="section-inner footer-inner">
+    <div class="footer-brand">
+      <a href="#hero" class="nav-logo">HR<span class="dot">.</span></a>
+      <p>Building modern, fast, and user-friendly digital experiences.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-socials">
+      <h4>Follow</h4>
+      <div class="footer-social-row">
+        <a href="rajharsh9501-cmd/" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1-.02-1.96-3.2.7-3.87-1.54-3.87-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.2.66.79.55A10.51 10.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+        </a>
+        <a href="www.linkedin.com/in/harsh-raj-ab7515319" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+        </a>
+        <a href="https://x.com/Rajharsh9501" target="_blank" rel="noopener" aria-label="Twitter / X" class="social-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.9 2H22l-7.5 8.57L23.3 22h-6.9l-5.4-6.6L4.8 22H1.7l8.03-9.17L1 2h7.1l4.9 6.03L18.9 2Zm-1.2 18h1.9L7.4 4h-2l12.3 16Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Harsh Raj. All rights reserved.</p>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="portfolio1.js"></script>
+</body>
+</html>
